@@ -1,0 +1,1 @@
+# Inter Portlet Communication (IPC) using Public Render Parameters
