@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	
+	<portlet>
+		<portlet-name>CarList</portlet-name>
+		<display-name>CarList</display-name>
+		<portlet-class>
+			javax.portlet.faces.GenericFacesPortlet
+		</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/carlist/view.xhtml</value>
+		</init-param>
+		<!-- Defining the Bridge event handler. -->
+		<init-param>
+			<name>javax.portlet.faces.bridgeEventHandler</name>
+			<value>com.roufid.tutorials.bridge.CarBridgeEventHandler</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>CarList</title>
+			<short-title>CarList</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<!-- The carList portlet will publish the event -->
+		<supported-publishing-event xmlns:event="http://www.roufid.com">
+			<qname>event:selectCarEvent</qname>
+		</supported-publishing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>CarInformation</portlet-name>
+		<display-name>CarInformation</display-name>
+		<portlet-class>
+			javax.portlet.faces.GenericFacesPortlet
+		</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/carinformation/view.xhtml</value>
+		</init-param>
+		<!-- Defining the Bridge event handler. -->
+		<init-param>
+			<name>javax.portlet.faces.bridgeEventHandler</name>
+			<value>com.roufid.tutorials.bridge.CarBridgeEventHandler</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>CarInformation</title>
+			<short-title>CarInformation</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<!-- The carInformation portlet will process the event -->
+		<supported-processing-event xmlns:event="http://www.roufid.com">
+			<qname>event:selectCarEvent</qname>
+		</supported-processing-event>
+	</portlet>
+	
+	<!-- Defining the event -->
+	<event-definition xmlns:event="http://www.roufid.com">
+		<qname>event:selectCarEvent</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+</portlet-app>
