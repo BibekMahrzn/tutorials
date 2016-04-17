@@ -1,12 +1,30 @@
 <?xml version="1.0"?>
 
-<faces-config
-	version="2.1"
-	xmlns="http://java.sun.com/xml/ns/javaee"
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
->
+	xmlns:bridge="http://www.liferay.com/xml/ns/liferay-faces-bridge-2.0-extension">
+	
 	<lifecycle>
 		<phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
 	</lifecycle>
+
+	<application>
+		<application-extension>
+			<!-- Add xmlns:bridge="http://www.liferay.com/xml/ns/liferay-faces-bridge-2.0-extension" to faces-config declaration  -->
+			<bridge:public-parameter-mappings>
+				<bridge:public-parameter-mapping>
+					<!-- the public render parameter of the portlet CarList will correspond to #{carListMB.selectedCarId} -->
+					<parameter>CarList:carId</parameter>
+					<model-el>#{carListMB.selectedCarId}</model-el>
+				</bridge:public-parameter-mapping>
+				<bridge:public-parameter-mapping>
+					<!-- the public render parameter of the portlet CarInformation will correspond to #{carInformationMB.selectedCarId}-->
+					<parameter>CarInformation:carId</parameter>
+					<model-el>#{carInformationMB.selectedCarId}</model-el>
+				</bridge:public-parameter-mapping>
+			</bridge:public-parameter-mappings>
+		</application-extension>
+	</application>
+
 </faces-config>

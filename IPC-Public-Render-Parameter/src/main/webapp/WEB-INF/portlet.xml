@@ -1,21 +1,17 @@
 <?xml version="1.0"?>
 
-<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
-	
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	version="2.0">
+
 	<portlet>
-		<portlet-name>CarList</portlet-name>
-		<display-name>CarList</display-name>
-		<portlet-class>
-			javax.portlet.faces.GenericFacesPortlet
-		</portlet-class>
+		<portlet-name>car-list</portlet-name>
+		<display-name>Car List</display-name>
+		<portlet-class>com.roufid.tutorials.portlet.CarList</portlet-class>
 		<init-param>
-			<name>javax.portlet.faces.defaultViewId.view</name>
-			<value>/views/carlist/view.xhtml</value>
-		</init-param>
-		<!-- You can optionally declare a bridgePublicRenderParameterHandler to process public render parameters -->
-		<init-param>
-			<name>javax.portlet.faces.bridgePublicRenderParameterHandler</name>
-			<value>com.roufid.tutorials.bridge.CarBridgePublicRenderParameterHandler</value>
+			<name>view-template</name>
+			<value>/html/carlist/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -23,8 +19,8 @@
 			<portlet-mode>view</portlet-mode>
 		</supports>
 		<portlet-info>
-			<title>CarList</title>
-			<short-title>CarList</short-title>
+			<title>Car List</title>
+			<short-title>Car List</short-title>
 			<keywords></keywords>
 		</portlet-info>
 		<security-role-ref>
@@ -43,19 +39,12 @@
 		<supported-public-render-parameter>carId</supported-public-render-parameter>
 	</portlet>
 	<portlet>
-		<portlet-name>CarInformation</portlet-name>
-		<display-name>CarInformation</display-name>
-		<portlet-class>
-			javax.portlet.faces.GenericFacesPortlet
-		</portlet-class>
+		<portlet-name>car-information</portlet-name>
+		<display-name>Car Information</display-name>
+		<portlet-class>com.roufid.tutorials.portlet.CarInformation</portlet-class>
 		<init-param>
-			<name>javax.portlet.faces.defaultViewId.view</name>
-			<value>/views/carinformation/view.xhtml</value>
-		</init-param>
-		<!-- You can optionally declare a bridgePublicRenderParameterHandler to process public render parameters -->
-		<init-param>
-			<name>javax.portlet.faces.bridgePublicRenderParameterHandler</name>
-			<value>com.roufid.tutorials.bridge.CarBridgePublicRenderParameterHandler</value>
+			<name>view-template</name>
+			<value>/html/carinformation/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -63,8 +52,8 @@
 			<portlet-mode>view</portlet-mode>
 		</supports>
 		<portlet-info>
-			<title>CarInformation</title>
-			<short-title>CarInformation</short-title>
+			<title>Car Information</title>
+			<short-title>Car Information</short-title>
 			<keywords></keywords>
 		</portlet-info>
 		<security-role-ref>
@@ -82,7 +71,7 @@
 		<!-- CarInformation portlet supports the public render parameter "carId" -->
 		<supported-public-render-parameter>carId</supported-public-render-parameter>
 	</portlet>
-	
+
 	<!-- Defining the public render parameter -->
 	<public-render-parameter>
 		<identifier>carId</identifier>

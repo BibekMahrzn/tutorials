@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.roufid.examples</groupId>
-	<artifactId>IPCSession</artifactId>
+	<artifactId>IPC-JSF-Public-Render-Parameter</artifactId>
 	<packaging>war</packaging>
-	<name>IPCSession Portlet</name>
+	<name>IPC-JSF-Public-Render-Parameter</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<build>
 		<plugins>
@@ -49,13 +49,13 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<properties>
 		<liferay.faces.version>3.2.5-ga6</liferay.faces.version>
 		<jsf.version>2.1.21</jsf.version>
 		<primefaces.version>5.2</primefaces.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -142,7 +142,7 @@
 	</repositories>
 	<profiles>
 		<profile>
-			<id>Tomcat</id>
+			<id>tomcat</id>
 			<properties>
 				<liferay.version>6.2.5</liferay.version>
 				<liferay.maven.plugin.version>6.2.5</liferay.maven.plugin.version>
